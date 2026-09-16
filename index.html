@@ -1,0 +1,1934 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>那須旅行のしおり</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ベース */
+    --bg:#fff7e6;
+    --paper:#fffdf5;
+    --paper-2:#fff4dc;
+    --ink:#3a2f1f;
+    --ink-soft:#5a4a35;
+    --ink-mute:#8a7a63;
+    --rule:#f0dfa8;
+
+    /* ポップアクセント */
+    --orange:#ff8a3d;      /* サンセット */
+    --orange-2:#e5661a;
+    --sky:#4fb3d9;         /* ブルースカイ */
+    --sky-2:#2f8fb3;
+    --leaf:#7bbf5a;        /* リーフグリーン */
+    --leaf-2:#4f9a3a;
+    --cherry:#e94f5c;      /* チェリー */
+    --cherry-2:#c8323f;
+    --sun:#ffc93d;         /* サニーイエロー */
+    --purple:#a878d4;      /* ぶどう */
+
+    --shadow-sm: 0 2px 0 rgba(210,170,80,.35);
+    --shadow-md: 0 6px 0 rgba(210,170,80,.28), 0 20px 40px -20px rgba(180,130,60,.25);
+    --shadow-lg: 0 8px 0 rgba(210,170,80,.3),  0 30px 60px -25px rgba(180,130,60,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(circle at 15% 10%, #ffe9b3 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, #ffd6c2 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, #fff2cc 0%, transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+    font-family:"Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+    padding:32px 14px 80px;
+  }
+  .book{max-width:900px; margin:0 auto}
+
+  /* 紙 */
+  .page{
+    background:var(--paper);
+    background-image:
+      radial-gradient(rgba(200,150,60,.05) 1.2px, transparent 1.4px);
+    background-size: 18px 18px;
+    border-radius:20px;
+    box-shadow: var(--shadow-md);
+    padding:44px 48px;
+    margin-bottom:26px;
+    position:relative;
+    border:2px solid #f5e5b8;
+  }
+
+  /* ページ番号タブ */
+  .page-tab{
+    position:absolute;
+    top:-14px; right:36px;
+    background:var(--orange);
+    color:#fff;
+    font-family:"DM Mono", monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    padding:6px 14px;
+    border-radius:10px;
+    box-shadow: 0 3px 0 var(--orange-2);
+    transform: rotate(-2deg);
+  }
+  .page-tab.sky{background:var(--sky); box-shadow: 0 3px 0 var(--sky-2)}
+  .page-tab.leaf{background:var(--leaf); box-shadow: 0 3px 0 var(--leaf-2)}
+  .page-tab.cherry{background:var(--cherry); box-shadow: 0 3px 0 var(--cherry-2)}
+  .page-tab.purple{background:var(--purple); box-shadow: 0 3px 0 #7a55a8}
+
+  /* =============== COVER =============== */
+  .cover{
+    padding:60px 48px 52px;
+    background:
+      radial-gradient(ellipse at top right, #ffd8a8 0%, transparent 60%),
+      radial-gradient(ellipse at bottom left, #cceaf5 0%, transparent 55%),
+      var(--paper);
+    overflow:hidden;
+    position:relative;
+    border:3px dashed #f0c98a;
+  }
+  .cover::before{
+    content:"";
+    position:absolute; inset:12px;
+    border:2px solid rgba(255,138,61,.2);
+    border-radius:14px;
+    pointer-events:none;
+  }
+  .cover-top{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:"DM Mono", monospace;
+    font-size:11px; letter-spacing:.16em;
+    color:var(--ink-mute);
+  }
+  .cover-top .pill{
+    background:var(--orange); color:#fff;
+    padding:6px 14px; border-radius:99px;
+    letter-spacing:.16em;
+    box-shadow: 0 2px 0 var(--orange-2);
+    transform: rotate(-2deg);
+  }
+  .cover-title{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-weight:900;
+    text-align:center;
+    margin:36px 0 24px;
+    line-height:1.1;
+  }
+  .cover-title .kicker{
+    display:inline-block;
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.28em;
+    color:#fff;
+    background:var(--cherry);
+    padding:6px 18px;
+    border-radius:99px;
+    margin-bottom:24px;
+    box-shadow: 0 3px 0 var(--cherry-2);
+    transform: rotate(-1deg);
+  }
+  .cover-title .main{
+    font-size:88px;
+    color:var(--orange-2);
+    letter-spacing:.02em;
+    display:block;
+    text-shadow:
+      3px 3px 0 var(--sun),
+      6px 6px 0 rgba(255,201,61,.35);
+  }
+  .cover-title .main .accent{color:var(--cherry); text-shadow: 3px 3px 0 #ffd6c2, 6px 6px 0 rgba(233,79,92,.2)}
+  .cover-title .sub{
+    display:block;
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-size:22px;
+    font-weight:500;
+    color:var(--ink);
+    margin-top:22px;
+    letter-spacing:.08em;
+  }
+
+  /* イラスト装飾 */
+  .doodle{position:absolute; pointer-events:none}
+  .doodle svg{display:block}
+  .doodle-1{top:80px; left:20px; transform:rotate(-12deg)}
+  .doodle-2{top:100px; right:24px; transform:rotate(10deg)}
+  .doodle-3{bottom:120px; left:30px; transform:rotate(6deg)}
+  .doodle-4{bottom:80px; right:40px; transform:rotate(-8deg)}
+
+  .cover-meta{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:14px;
+    margin-top:44px;
+  }
+  .meta-card{
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:14px;
+    padding:14px 12px;
+    text-align:center;
+    box-shadow: 0 3px 0 #f0dfa8;
+  }
+  .meta-card .k{
+    font-family:"DM Mono", monospace;
+    font-size:10px;
+    color:var(--ink-mute);
+    letter-spacing:.14em;
+    margin-bottom:6px;
+  }
+  .meta-card .v{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--ink);
+    line-height:1.4;
+  }
+  .meta-card:nth-child(1){border-color:var(--orange); background:#fff5e8}
+  .meta-card:nth-child(2){border-color:var(--sky); background:#e8f5fa}
+  .meta-card:nth-child(3){border-color:var(--leaf); background:#eef6e6}
+  .meta-card:nth-child(4){border-color:var(--cherry); background:#fce8ea}
+
+  .cover-footer{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:44px;
+    gap:20px;
+  }
+  .motto-box{
+    background:#fff;
+    border:2px dashed var(--orange);
+    border-radius:16px;
+    padding:16px 20px;
+    flex:1;
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.8;
+  }
+  .motto-box em{
+    font-style:normal;
+    font-weight:700;
+    color:var(--cherry);
+    margin-right:10px;
+    font-size:11px;
+    letter-spacing:.14em;
+    background:#fce8ea;
+    padding:2px 8px;
+    border-radius:6px;
+  }
+  .stamp{
+    width:120px; height:120px; flex-shrink:0;
+    border-radius:50%;
+    border:3px solid var(--cherry);
+    color:var(--cherry);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-weight:900;
+    font-size:16px;
+    letter-spacing:.14em;
+    line-height:1.3;
+    transform: rotate(-8deg);
+    background: rgba(255,255,255,.6);
+    box-shadow: inset 0 0 0 4px #fff, 0 4px 0 rgba(200,50,63,.15);
+  }
+  .stamp span{display:block; font-family:"DM Mono", monospace; font-size:10px; letter-spacing:.16em; margin-top:4px; font-weight:400}
+
+  /* =============== 見出し =============== */
+  h1,h2,h3,h4{
+    font-family:"Zen Maru Gothic", sans-serif;
+    letter-spacing:.04em;
+  }
+
+  .section-num{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:"DM Mono", monospace;
+    font-size:12px;
+    color:#fff;
+    background:var(--orange);
+    padding:6px 14px;
+    border-radius:99px;
+    letter-spacing:.18em;
+    margin-bottom:16px;
+    box-shadow: 0 2px 0 var(--orange-2);
+  }
+  .section-num.sky{background:var(--sky); box-shadow: 0 2px 0 var(--sky-2)}
+  .section-num.leaf{background:var(--leaf); box-shadow: 0 2px 0 var(--leaf-2)}
+  .section-num.cherry{background:var(--cherry); box-shadow: 0 2px 0 var(--cherry-2)}
+  .section-num.purple{background:var(--purple); box-shadow: 0 2px 0 #7a55a8}
+
+  h2.section{
+    font-size:36px;
+    font-weight:900;
+    margin:0 0 10px;
+    line-height:1.3;
+    color:var(--ink);
+  }
+  h2.section .en{
+    display:block;
+    font-family:"DM Mono", monospace;
+    font-size:12px;
+    color:var(--ink-mute);
+    letter-spacing:.24em;
+    margin-top:10px;
+    font-weight:400;
+  }
+
+  h3.day{
+    font-size:22px;
+    font-weight:700;
+    margin:24px 0 20px;
+    padding:18px 22px;
+    border-radius:16px;
+    background: linear-gradient(135deg, #fff5e8, #ffe8d0);
+    border:2px solid var(--orange);
+    display:flex; align-items:center; gap:14px;
+    flex-wrap:wrap;
+    color:var(--orange-2);
+    line-height:1.5;
+    box-shadow: 0 3px 0 rgba(255,138,61,.2);
+  }
+  h3.day .title{flex:1 1 auto; min-width:0}
+  h3.day .date{
+    font-family:"DM Mono", monospace;
+    font-size:12px;
+    color:#fff;
+    background:var(--orange);
+    padding:4px 12px;
+    border-radius:99px;
+    letter-spacing:.16em;
+    margin-left:auto;
+    flex-shrink:0;
+  }
+
+  h4.spot{
+    font-size:22px;
+    font-weight:700;
+    margin:0 0 8px;
+    color:var(--ink);
+    display:flex; align-items:center; gap:12px;
+    flex-wrap:wrap;
+    line-height:1.4;
+  }
+  h4.spot .icon{
+    font-size:28px;
+    background:#fff;
+    width:48px; height:48px;
+    border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center;
+    border:2px solid var(--rule);
+    flex-shrink:0;
+  }
+  h4.spot .en{
+    font-family:"DM Mono", monospace;
+    font-size:10px;
+    color:var(--ink-mute);
+    letter-spacing:.2em;
+    font-weight:400;
+    background:#fff5e8;
+    padding:4px 10px;
+    border-radius:99px;
+    margin-left:auto;
+  }
+
+  /* =============== テキスト =============== */
+  p{margin:0 0 14px; line-height:1.9}
+  a{
+    color:var(--sky-2);
+    text-decoration:none;
+    border-bottom:2px dotted var(--sky);
+    padding:0 1px;
+    font-weight:500;
+  }
+  a:hover{color:var(--orange-2); border-color:var(--orange)}
+  strong{font-weight:700; color:var(--cherry-2)}
+  .muted{color:var(--ink-mute); font-size:14px; line-height:1.8}
+  .lead{
+    font-size:16px;
+    color:var(--ink-soft);
+    line-height:2;
+    background:#fff5e8;
+    padding:18px 22px;
+    border-radius:14px;
+    border-left:6px solid var(--orange);
+    margin-top:16px;
+  }
+
+  ul.plain{list-style:none; padding:0; margin:0 0 14px}
+  ul.plain li{
+    padding:8px 0 8px 28px;
+    position:relative;
+    line-height:1.7;
+    border-bottom:1px dashed var(--rule);
+  }
+  ul.plain li:last-child{border-bottom:0}
+  ul.plain li::before{
+    content:"●";
+    position:absolute; left:6px; top:8px;
+    color:var(--orange);
+    font-size:10px;
+  }
+
+  /* =============== TOC =============== */
+  .toc{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:8px 24px;
+    margin-top:20px;
+  }
+  .toc a{
+    display:flex; align-items:center; gap:12px;
+    padding:12px 14px;
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:12px;
+    color:var(--ink);
+    font-size:14px;
+    font-weight:500;
+    border-bottom:2px solid var(--rule);
+    transition: transform .12s ease;
+  }
+  .toc a:hover{
+    transform: translateY(-2px);
+    border-color:var(--orange);
+    background:#fff5e8;
+  }
+  .toc a .n{
+    font-family:"DM Mono", monospace;
+    font-size:11px;
+    color:#fff;
+    background:var(--orange);
+    padding:4px 8px;
+    border-radius:6px;
+    letter-spacing:.1em;
+    flex-shrink:0;
+  }
+  .toc a:nth-child(4n+2) .n{background:var(--sky)}
+  .toc a:nth-child(4n+3) .n{background:var(--leaf)}
+  .toc a:nth-child(4n+4) .n{background:var(--cherry)}
+  .toc a .t{flex:1}
+  .toc a .p{
+    font-family:"DM Mono", monospace;
+    color:var(--ink-mute);
+    font-size:10px;
+    flex-shrink:0;
+  }
+
+  /* =============== OVERVIEW =============== */
+  .overview{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:12px;
+    margin-top:20px;
+  }
+  .overview .row{
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:12px;
+    padding:14px 18px;
+  }
+  .overview .k{
+    font-family:"Zen Maru Gothic", sans-serif;
+    color:var(--orange-2);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    margin-bottom:4px;
+  }
+  .overview .v{
+    font-size:15px;
+    line-height:1.6;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  /* =============== TIMELINE =============== */
+  .timeline{
+    margin:24px 0;
+    display:flex; flex-direction:column;
+    gap:10px;
+  }
+  .t-row{
+    display:grid;
+    grid-template-columns: 96px 1fr;
+    gap:14px;
+    align-items:stretch;
+  }
+  .t-time{
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:12px;
+    padding:10px 8px;
+    text-align:center;
+    font-family:"DM Mono", monospace;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    display:flex; align-items:center; justify-content:center;
+    line-height:1.3;
+    letter-spacing:.02em;
+  }
+  .t-what{
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:12px;
+    padding:12px 18px;
+    font-size:15px;
+    line-height:1.6;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .t-what small{
+    display:block;
+    color:var(--ink-mute);
+    font-size:12px;
+    margin-top:4px;
+    line-height:1.5;
+  }
+  /* pin色分け */
+  .t-row.orange .t-time{background:var(--orange); color:#fff; border-color:var(--orange-2)}
+  .t-row.orange .t-what{border-color:var(--orange); background:#fff5e8}
+  .t-row.sky .t-time{background:var(--sky); color:#fff; border-color:var(--sky-2)}
+  .t-row.sky .t-what{border-color:var(--sky); background:#e8f5fa}
+  .t-row.leaf .t-time{background:var(--leaf); color:#fff; border-color:var(--leaf-2)}
+  .t-row.leaf .t-what{border-color:var(--leaf); background:#eef6e6}
+  .t-row.cherry .t-time{background:var(--cherry); color:#fff; border-color:var(--cherry-2)}
+  .t-row.cherry .t-what{border-color:var(--cherry); background:#fce8ea}
+  .t-row.purple .t-time{background:var(--purple); color:#fff; border-color:#7a55a8}
+  .t-row.purple .t-what{border-color:var(--purple); background:#f4ebfa}
+
+  /* =============== SPOT CARD =============== */
+  .spot-card{
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:18px;
+    padding:24px 26px;
+    margin:20px 0;
+    box-shadow: 0 4px 0 var(--rule);
+    position:relative;
+  }
+  .spot-card.orange{border-color:var(--orange); box-shadow: 0 4px 0 rgba(255,138,61,.4)}
+  .spot-card.sky{border-color:var(--sky); box-shadow: 0 4px 0 rgba(79,179,217,.4)}
+  .spot-card.leaf{border-color:var(--leaf); box-shadow: 0 4px 0 rgba(123,191,90,.4)}
+  .spot-card.cherry{border-color:var(--cherry); box-shadow: 0 4px 0 rgba(233,79,92,.4)}
+  .spot-card.purple{border-color:var(--purple); box-shadow: 0 4px 0 rgba(168,120,212,.4)}
+
+  .spot-tag{
+    display:inline-block;
+    font-family:"DM Mono", monospace;
+    font-size:10px;
+    letter-spacing:.2em;
+    color:#fff;
+    background:var(--orange);
+    padding:4px 12px;
+    border-radius:99px;
+    margin-bottom:12px;
+    font-weight:500;
+  }
+  .spot-card.sky .spot-tag{background:var(--sky)}
+  .spot-card.leaf .spot-tag{background:var(--leaf)}
+  .spot-card.cherry .spot-tag{background:var(--cherry)}
+  .spot-card.purple .spot-tag{background:var(--purple)}
+
+  .info-row{
+    display:grid;
+    grid-template-columns: 100px 1fr;
+    gap:12px 16px;
+    font-size:14px;
+    padding:10px 0;
+    border-bottom:1px dashed var(--rule);
+    align-items:baseline;
+  }
+  .info-row:last-child{border-bottom:0}
+  .info-row .k{
+    font-family:"Zen Maru Gothic", sans-serif;
+    color:var(--orange-2);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em;
+  }
+  .info-row .v{
+    color:var(--ink);
+    line-height:1.6;
+    word-break: break-all;
+  }
+
+  /* callouts */
+  .callout{
+    background:#fff5e8;
+    border:2px dashed var(--orange);
+    padding:16px 20px;
+    font-size:14px;
+    margin:16px 0;
+    border-radius:14px;
+    color:var(--ink-soft);
+    line-height:1.8;
+  }
+  .callout.warn{background:#fce8ea; border-color:var(--cherry); color:var(--cherry-2)}
+  .callout.tip{background:#eef6e6; border-color:var(--leaf); color:var(--leaf-2)}
+  .callout.info{background:#e8f5fa; border-color:var(--sky); color:var(--sky-2)}
+  .callout strong{color:inherit}
+  .callout .label{
+    display:inline-block;
+    font-family:"DM Mono", monospace;
+    font-size:10px;
+    letter-spacing:.2em;
+    padding:3px 10px;
+    border-radius:99px;
+    background:var(--orange);
+    color:#fff;
+    margin-right:10px;
+    vertical-align:2px;
+  }
+  .callout.tip .label{background:var(--leaf)}
+  .callout.warn .label{background:var(--cherry)}
+  .callout.info .label{background:var(--sky)}
+
+  /* two-column */
+  .cols{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+  }
+  @media (max-width:680px){
+    .cols{grid-template-columns:1fr}
+  }
+
+  /* route */
+  .route{
+    display:flex; flex-direction:column;
+    gap:0;
+    margin:14px 0;
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:14px;
+    padding:14px 20px;
+  }
+  .route .stop{
+    display:flex; align-items:center; gap:14px;
+    padding:8px 0;
+  }
+  .route .stop .num{
+    font-family:"DM Mono", monospace;
+    color:#fff;
+    background:var(--orange);
+    font-size:11px;
+    padding:4px 8px;
+    border-radius:6px;
+    letter-spacing:.1em;
+    flex-shrink:0;
+  }
+  .route .stop:nth-child(4n+3) .num{background:var(--sky)}
+  .route .stop:nth-child(4n+5) .num{background:var(--leaf)}
+  .route .stop:nth-child(4n+7) .num{background:var(--cherry)}
+  .route .stop .name{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-size:15px;
+    font-weight:500;
+    color:var(--ink);
+  }
+  .route .stop .name small{
+    display:block;
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    font-size:11px;
+    color:var(--ink-mute);
+    letter-spacing:.06em;
+    margin-top:2px;
+    font-weight:400;
+  }
+  .route .arrow{
+    color:var(--orange);
+    padding:2px 0 2px 12px;
+    font-size:14px;
+    letter-spacing:2px;
+  }
+
+  /* train */
+  .train{
+    background: linear-gradient(135deg, #2f8fb3, #4fb3d9);
+    color:#fff;
+    padding:26px 28px;
+    border-radius:20px;
+    margin:20px 0;
+    box-shadow: 0 6px 0 #1e6d8a;
+    position:relative;
+    overflow:hidden;
+  }
+  .train::before{
+    content:"🚄";
+    position:absolute;
+    top:-20px; right:20px;
+    font-size:120px;
+    opacity:.12;
+  }
+  .train h4{color:#fff8dc; margin:0 0 16px; font-size:20px; font-weight:700; display:flex; align-items:center; gap:10px}
+  .train h4 .ic{background:var(--sun); color:var(--sky-2); font-size:14px; padding:4px 10px; border-radius:8px; font-family:"DM Mono", monospace}
+  .train .leg{
+    display:grid;
+    grid-template-columns: 100px 1fr 90px;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px dashed rgba(255,255,255,.3);
+    align-items:center;
+    position:relative;
+  }
+  .train .leg:last-child{border-bottom:0}
+  .train .st{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-size:16px;
+    font-weight:700;
+  }
+  .train .st small{
+    display:block;
+    font-family:"DM Mono", monospace;
+    font-size:10px;
+    color:#d0eef7;
+    letter-spacing:.12em;
+    margin-top:2px;
+    font-weight:400;
+  }
+  .train .time{
+    font-family:"DM Mono", monospace;
+    color:var(--sun);
+    font-size:17px;
+    font-weight:500;
+    letter-spacing:.04em;
+  }
+  .train .time.right{text-align:right}
+  .train .line-info{
+    text-align:center;
+    font-size:12px;
+    color:#fff8dc;
+    padding:4px 0;
+    letter-spacing:.1em;
+    font-weight:500;
+  }
+  .train .line-info::before{content:"┆ "; opacity:.6}
+  .train .line-info::after{content:" ┆"; opacity:.6}
+  .train a{color:var(--sun); border-color:var(--sun)}
+
+  /* checklist */
+  .checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 20px;
+    margin:12px 0;
+  }
+  @media (max-width:680px){.checklist{grid-template-columns:1fr}}
+  .checklist label{
+    display:flex; align-items:flex-start; gap:12px;
+    padding:10px 14px;
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:10px;
+    font-size:14px;
+    cursor:pointer;
+    line-height:1.5;
+    transition: background .12s;
+  }
+  .checklist label:hover{background:#fff5e8; border-color:var(--orange)}
+  .checklist input[type=checkbox]{
+    appearance:none;
+    width:20px; height:20px;
+    border:2px solid var(--orange);
+    border-radius:6px;
+    background:#fff;
+    margin-top:1px;
+    display:grid; place-items:center;
+    flex-shrink:0;
+    cursor:pointer;
+  }
+  .checklist input[type=checkbox]:checked{background:var(--orange); border-color:var(--orange-2)}
+  .checklist input[type=checkbox]:checked::after{content:"✓"; color:#fff; font-size:14px; font-weight:700}
+  .checklist input[type=checkbox]:checked + span{color:var(--ink-mute); text-decoration:line-through}
+
+  /* absolute times */
+  .abs-times{
+    background:#fff;
+    border:2px solid var(--cherry);
+    padding:20px 24px;
+    margin:16px 0;
+    border-radius:16px;
+    box-shadow: 0 4px 0 rgba(233,79,92,.3);
+  }
+  .abs-times .item{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap:14px;
+    padding:10px 0;
+    align-items:center;
+    border-bottom:1px dashed var(--rule);
+  }
+  .abs-times .item:last-child{border-bottom:0}
+  .abs-times .t{
+    font-family:"DM Mono", monospace;
+    font-size:13px;
+    color:#fff;
+    background:var(--cherry);
+    padding:5px 10px;
+    border-radius:8px;
+    letter-spacing:.04em;
+    text-align:center;
+    font-weight:500;
+  }
+  .abs-times .w{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-size:15px;
+    font-weight:500;
+    color:var(--ink);
+    line-height:1.5;
+  }
+
+  /* rules */
+  .rules{
+    counter-reset:rule;
+    list-style:none;
+    padding:0; margin:16px 0;
+    display:flex; flex-direction:column;
+    gap:10px;
+  }
+  .rules li{
+    counter-increment:rule;
+    padding:14px 18px 14px 58px;
+    background:#fff;
+    border:2px solid var(--rule);
+    border-radius:12px;
+    position:relative;
+    font-size:14px;
+    line-height:1.7;
+  }
+  .rules li::before{
+    content: counter(rule);
+    position:absolute;
+    left:14px; top:12px;
+    font-family:"DM Mono", monospace;
+    color:#fff;
+    background:var(--purple);
+    font-size:14px;
+    font-weight:700;
+    width:30px; height:30px;
+    border-radius:50%;
+    display:grid; place-items:center;
+    box-shadow: 0 2px 0 #7a55a8;
+  }
+
+  /* divider */
+  .divider{
+    text-align:center;
+    color:var(--orange);
+    margin:28px 0;
+    font-size:20px;
+    letter-spacing:.5em;
+  }
+
+  /* colophon */
+  .colophon{
+    text-align:center;
+    color:var(--ink-mute);
+    font-size:11px;
+    letter-spacing:.24em;
+    font-family:"DM Mono", monospace;
+    margin-top:26px;
+    padding-top:20px;
+    border-top:2px dashed var(--rule);
+  }
+
+  /* helpers */
+  .mt-24{margin-top:24px}
+  .mt-16{margin-top:16px}
+  .mb-0{margin-bottom:0 !important}
+
+  /* =============== RESPONSIVE =============== */
+
+  /* -- タブレット〜スマホ大（〜680px） -- */
+  @media (max-width:680px){
+    body{padding:16px 8px 40px; font-size:15px; line-height:1.85}
+    .book{max-width:100%}
+    .page{padding:32px 18px; border-radius:16px; margin-bottom:22px}
+    .cover{padding:36px 18px 28px}
+
+    /* 表紙 */
+    .cover-title{margin:28px 0 20px}
+    .cover-title .kicker{font-size:12px; padding:5px 14px; letter-spacing:.16em}
+    .cover-title .main{
+      font-size:46px;
+      text-wrap: balance;
+      text-shadow: 2px 2px 0 var(--sun), 4px 4px 0 rgba(255,201,61,.35);
+    }
+    .cover-title .main .accent{text-shadow: 2px 2px 0 #ffd6c2, 4px 4px 0 rgba(233,79,92,.2)}
+    .cover-title .sub{font-size:16px; text-wrap: balance; letter-spacing:.04em}
+
+    .cover-meta{grid-template-columns:repeat(2,1fr); gap:10px; margin-top:32px}
+    .meta-card{padding:12px 8px}
+    .meta-card .v{font-size:14px}
+
+    .cover-footer{flex-direction:column; align-items:stretch; gap:14px; margin-top:32px}
+    .motto-box{padding:14px 16px; font-size:13.5px}
+    .stamp{width:100px; height:100px; font-size:14px; align-self:center}
+
+    /* 見出し */
+    .section-num{font-size:11px; padding:5px 12px; letter-spacing:.14em}
+    h2.section{font-size:24px; line-height:1.35}
+    h2.section .en{font-size:10px; letter-spacing:.18em}
+
+    h3.day{
+      font-size:16px;
+      padding:14px 16px;
+      gap:8px;
+      line-height:1.6;
+      border-radius:14px;
+    }
+    h3.day .date{
+      margin-left:0;
+      font-size:11px;
+      padding:3px 10px;
+    }
+
+    h4.spot{font-size:17px; gap:10px; line-height:1.45}
+    h4.spot .icon{width:38px; height:38px; font-size:20px}
+    h4.spot .en{
+      margin-left:0;
+      font-size:9px;
+      padding:3px 8px;
+      letter-spacing:.14em;
+      order: 3;
+      width:100%;
+      text-align:left;
+    }
+
+    /* リスト・カード */
+    .overview{grid-template-columns:1fr; gap:8px}
+    .overview .row{padding:12px 14px}
+    .overview .v{font-size:14px}
+
+    .toc{grid-template-columns:1fr; gap:6px}
+    .toc a{padding:14px 14px; font-size:14px; min-height:48px}
+
+    .lead{font-size:14.5px; padding:14px 16px; line-height:1.8}
+
+    /* タイムライン：時刻の枠を少し広く／文字も見やすく */
+    .t-row{grid-template-columns: 78px 1fr; gap:8px}
+    .t-time{font-size:11.5px; padding:10px 4px; letter-spacing:0}
+    .t-what{padding:11px 14px; font-size:14px; line-height:1.6}
+    .t-what small{font-size:11.5px; margin-top:3px}
+
+    /* スポットカード */
+    .spot-card{padding:20px 18px; border-radius:14px}
+    .spot-tag{font-size:9.5px; padding:4px 10px; letter-spacing:.16em}
+
+    /* info-row："所在地" 用にラベル幅を拡大 */
+    .info-row{grid-template-columns:92px 1fr; font-size:13px; gap:8px 12px; padding:8px 0}
+    .info-row .k{font-size:11.5px}
+
+    /* callout */
+    .callout{padding:14px 16px; font-size:13px; line-height:1.75}
+    .callout .label{font-size:9.5px; padding:2px 8px}
+
+    /* absolute-times */
+    .abs-times{padding:16px 18px}
+    .abs-times .item{grid-template-columns: 118px 1fr; gap:10px; padding:8px 0}
+    .abs-times .t{font-size:11.5px; padding:4px 6px}
+    .abs-times .w{font-size:14px}
+
+    /* rules（番号バッジリスト） */
+    .rules li{padding:12px 14px 12px 52px; font-size:13.5px}
+    .rules li::before{width:26px; height:26px; font-size:12px; left:12px; top:11px}
+
+    /* route */
+    .route{padding:12px 16px}
+    .route .stop .name{font-size:14px}
+
+    /* train は下の 480px ブレークで大きく組み替え。ここでは軽く調整 */
+    .train{padding:20px 18px; border-radius:16px}
+    .train h4{font-size:17px; margin-bottom:14px}
+    .train h4 .ic{font-size:12px; padding:3px 8px}
+
+    /* checklist */
+    .checklist label{padding:12px 14px; font-size:13.5px; min-height:44px}
+    .checklist input[type=checkbox]{width:22px; height:22px}
+
+    /* ページタブ */
+    .page-tab{right:18px; top:-12px; font-size:11px; padding:5px 12px}
+
+    /* ドゥードル：狭幅で邪魔になるため縮小 */
+    .doodle{transform: scale(.65); opacity:.75}
+    .doodle-1{top:64px; left:8px}
+    .doodle-2{top:80px; right:8px}
+  }
+
+  /* -- スマホ標準（〜480px）：さらに攻めた最適化 -- */
+  @media (max-width:480px){
+    body{padding:12px 6px 36px; font-size:14.5px}
+    .page{padding:26px 16px; border-radius:14px}
+    .cover{padding:32px 16px 24px}
+
+    /* 表紙タイトルの折り返し防止 */
+    .cover-title .main{
+      font-size:40px;
+      display:block;
+      line-height:1.15;
+    }
+    .cover-title .sub{font-size:15px}
+
+    /* ドゥードルは非表示（重なり防止） */
+    .doodle{display:none}
+
+    /* もくじ：タップ領域さらに広く */
+    .toc a{padding:14px 12px; font-size:13.5px; gap:10px}
+    .toc a .n{font-size:10px; padding:4px 6px}
+    .toc a .p{font-size:9.5px}
+
+    /* タイムライン：時刻列をさらに引き締める */
+    .t-row{grid-template-columns: 70px 1fr; gap:7px}
+    .t-time{font-size:11px; padding:9px 3px}
+    .t-what{padding:10px 12px; font-size:13.5px}
+
+    /* info-row：所在地などが1行で読めるように縦積み化 */
+    .info-row{
+      grid-template-columns: 1fr;
+      gap:2px 0;
+      padding:10px 0;
+    }
+    .info-row .k{margin-bottom:2px}
+    .info-row .v{font-size:13.5px}
+
+    /* absolute-times：縦積み化 */
+    .abs-times{padding:14px 14px}
+    .abs-times .item{
+      grid-template-columns: 1fr;
+      gap:6px;
+      padding:10px 0;
+    }
+    .abs-times .t{
+      justify-self:start;
+      font-size:11px;
+      padding:4px 10px;
+    }
+    .abs-times .w{font-size:14px}
+
+    /* ======== TRAIN 完全リビルド ======== */
+    .train .leg{
+      grid-template-columns: 1fr;
+      gap:4px;
+      padding:14px 0;
+      text-align:left;
+    }
+    .train .st{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:10px;
+      font-size:15px;
+    }
+    .train .st small{
+      display:inline-block;
+      margin-top:0;
+      font-size:9.5px;
+      opacity:.85;
+    }
+    .train .time,
+    .train .time.right{
+      text-align:left;
+      font-size:15px;
+      color:var(--sun);
+      font-weight:500;
+      background: rgba(255,255,255,.1);
+      padding:4px 10px;
+      border-radius:6px;
+      align-self:flex-start;
+      display:inline-block;
+      white-space:nowrap;
+    }
+    .train .line-info{
+      text-align:left;
+      font-size:11.5px;
+      padding:2px 0 2px 10px;
+      border-left:2px dashed rgba(255,255,255,.35);
+      margin:2px 0 2px 4px;
+      line-height:1.5;
+    }
+    .train .line-info::before,
+    .train .line-info::after{content:""}
+
+    /* コールアウト内リンクの折り返し余裕 */
+    .callout a{word-break: break-all}
+
+    /* ページタブは余白節約 */
+    .page-tab{right:14px; padding:4px 10px; font-size:10.5px}
+  }
+
+  /* -- 極小（〜360px） -- */
+  @media (max-width:360px){
+    .cover-title .main{font-size:34px}
+    h2.section{font-size:22px}
+    .t-row{grid-template-columns: 64px 1fr}
+    .t-time{font-size:10.5px}
+  }
+
+  /* ============================================================
+     印刷 / PDF（スマホ画面サイズに最適化）
+     ブラウザの「印刷 → PDFに保存」でそのまま共有用PDFになる
+     ============================================================ */
+  @page{ size: 117mm 250mm; margin: 4.5mm; }
+
+  @media print{
+    html,body{ background:var(--bg) !important; }
+    body{ padding:0 !important; font-size:13px; line-height:1.68; }
+    .book{ max-width:none !important; }
+
+    /* 章ごとに改ページ。中身は必要なだけ次ページへ流す */
+    .page{
+      margin:0 !important;
+      padding:14px 12px !important;
+      border-radius:12px;
+      box-shadow:none !important;
+      break-before: page;
+      break-inside: auto;
+    }
+    .page:first-child{ break-before: auto; }
+    #overview{ break-before: page; }
+
+    /* 見出しは中身と同じページに（単独で取り残さない） */
+    .hd-group{ break-inside: avoid; break-after: avoid; }
+    h2.section, h3.day, .section-num, p.lead, h4.spot{
+      break-after: avoid; break-inside: avoid;
+    }
+    h2.section{ font-size:21px !important; margin:4px 0 10px !important; }
+    h3.day{ break-before: avoid; }
+
+    /* 割れると読めない塊はページを跨がせない */
+    .spot-card, .callout, .t-row, .abs-times .item, .toc a,
+    .overview .row, .route, .train, .meta-card, .rules li,
+    .checklist label, .info-row, .cols > *{ break-inside: avoid; }
+    .callout{ break-before: avoid; }
+    p, li, .muted{ orphans:3; widows:3; }
+
+    /* 見切れ防止：切り抜きをやめて全体を出す */
+    .page, .spot-card, .train, .cover{ overflow: visible !important; }
+
+    /* スマホ幅と同じ縦積みレイアウトに */
+    .cols, .checklist, .toc{ grid-template-columns: 1fr !important; }
+    .toc{ gap:5px !important; }
+    .toc a{ padding:5px 9px !important; font-size:12px !important; pointer-events:none; }
+
+    /* 余白の引き締め */
+    .spot-card{ margin:0 0 10px !important; padding:12px 12px !important; }
+    .info-row{ padding:7px 0 !important; }
+    .timeline .t-row{ margin-bottom:5px !important; }
+    .checklist label{ padding:7px 9px !important; }
+    .rules li{ margin-bottom:6px !important; }
+    ul.plain li{ margin-bottom:4px !important; }
+    p{ margin:6px 0 !important; }
+    .mt-24{ margin-top:14px !important; }
+    .mt-16{ margin-top:10px !important; }
+
+    /* 表紙は1ページに収める */
+    .cover{ break-inside: avoid; padding:22px 14px !important; }
+    .cover-title{ margin:16px 0 14px !important; }
+    .cover-title .main{ font-size:44px !important; }
+    .cover-meta{ grid-template-columns: repeat(2,1fr) !important; }
+
+    a{ color:inherit; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+<div class="book">
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+<section class="page cover">
+  <div class="doodle doodle-1"><svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="20" fill="#ffc93d"/><circle cx="24" cy="26" r="3" fill="#3a2f1f"/><circle cx="36" cy="26" r="3" fill="#3a2f1f"/><path d="M22,36 Q30,42 38,36" stroke="#3a2f1f" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+  <div class="doodle doodle-2"><svg width="70" height="70" viewBox="0 0 70 70"><path d="M35,10 L45,30 L65,32 L50,46 L54,66 L35,56 L16,66 L20,46 L5,32 L25,30 Z" fill="#e94f5c"/></svg></div>
+  <div class="doodle doodle-4"><svg width="70" height="70" viewBox="0 0 70 70"><path d="M35,60 L15,25 L25,25 L25,10 L45,10 L45,25 L55,25 Z" fill="#7bbf5a"/></svg></div>
+
+  <div class="cover-top">
+    <span>Family Trip · No. 09</span>
+    <span class="pill">EDITION 2026.09</span>
+  </div>
+
+  <div class="cover-title">
+    <span class="kicker">🧸 FAMILY TRIP · NASU HIGHLAND 🍦</span>
+    <span class="main">那須<span class="accent">旅行。</span></span>
+    <span class="sub">たびのしおり</span>
+  </div>
+
+  <div class="cover-meta">
+    <div class="meta-card"><div class="k">DATES</div><div class="v">2026.09.17<br>→ 09.18</div></div>
+    <div class="meta-card"><div class="k">FROM</div><div class="v">埼玉<br>上尾市</div></div>
+    <div class="meta-card"><div class="k">STAY</div><div class="v">かんすい苑<br>覚楽</div></div>
+    <div class="meta-card"><div class="k">MOVE</div><div class="v">車 +<br>新幹線</div></div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="motto-box">
+      <em>PLAN</em>ゆったり温泉 × テディベア × 高原の牧場<br>
+      <em>MOTTO</em>時間に追われず、川崎19:00までに帰る。
+    </div>
+    <div class="stamp">安全<br>第一<span>SAFE TRIP</span></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INDEX + OVERVIEW
+     ============================================================ -->
+<section class="page" id="index">
+  <span class="page-tab">P. 01</span>
+
+  <div class="hd-group"><span class="section-num">00 · INDEX</span>
+  <h2 class="section">もくじ<span class="en">TABLE OF CONTENTS</span></h2></div>
+
+  <div class="toc">
+    <a href="#overview"><span class="n">01</span><span class="t">旅行概要</span><span class="p">P.01</span></a>
+    <a href="#day1"><span class="n">02</span><span class="t">1日目のタイムライン</span><span class="p">P.02</span></a>
+    <a href="#bar"><span class="n">03</span><span class="t">那須高原バル</span><span class="p">P.03</span></a>
+    <a href="#teddy"><span class="n">04</span><span class="t">テディベア・ミュージアム</span><span class="p">P.03</span></a>
+    <a href="#shozo"><span class="n">05</span><span class="t">NASU SHOZO CAFE</span><span class="p">P.04</span></a>
+    <a href="#hotel"><span class="n">06</span><span class="t">かんすい苑 覚楽</span><span class="p">P.04</span></a>
+    <a href="#day2"><span class="n">07</span><span class="t">2日目のタイムライン</span><span class="p">P.05</span></a>
+    <a href="#sessho"><span class="n">08</span><span class="t">殺生石・那須温泉神社</span><span class="p">P.06</span></a>
+    <a href="#farm"><span class="n">09</span><span class="t">南ヶ丘牧場</span><span class="p">P.06</span></a>
+    <a href="#train"><span class="n">10</span><span class="t">電車組・川崎への移動</span><span class="p">P.07</span></a>
+    <a href="#car"><span class="n">11</span><span class="t">車組・駅送迎後</span><span class="p">P.08</span></a>
+    <a href="#rain"><span class="n">12</span><span class="t">雨天時プラン</span><span class="p">P.09</span></a>
+    <a href="#absolute"><span class="n">13</span><span class="t">絶対に守りたい時刻</span><span class="p">P.10</span></a>
+    <a href="#route"><span class="n">14</span><span class="t">最終ルート</span><span class="p">P.10</span></a>
+    <a href="#checklist"><span class="n">15</span><span class="t">事前チェックリスト</span><span class="p">P.11</span></a>
+    <a href="#rules"><span class="n">16</span><span class="t">当日の調整ルール</span><span class="p">P.12</span></a>
+  </div>
+
+  <div class="mt-24" id="overview">
+    <div class="hd-group"><span class="section-num cherry">01 · OVERVIEW</span>
+    <h2 class="section">旅行概要<span class="en">TRIP AT A GLANCE</span></h2>
+
+    <p class="lead">
+      観光地を詰め込みすぎず、<strong>食事・テディベア・カフェ・温泉・牧場</strong>を
+      ゆっくり楽しむプラン。<br>
+      2日目は<strong>川崎19:00到着</strong>を最優先にし、
+      16:03発「なすの278号」を軸に組み立てています。
+    </p></div>
+
+    <div class="overview">
+      <div class="row"><div class="k">🗓️ 日程</div><div class="v">2026年9月17日（木）– 18日（金）／1泊2日</div></div>
+      <div class="row"><div class="k">🚗 出発</div><div class="v">埼玉県上尾市・9月17日 9:30</div></div>
+      <div class="row"><div class="k">🛣️ 移動</div><div class="v">自家用車（帰路は一部新幹線）</div></div>
+      <div class="row"><div class="k">🏨 宿泊</div><div class="v">かんすい苑 覚楽</div></div>
+      <div class="row"><div class="k">🎡 観光</div><div class="v">テディベア・ミュージアム／殺生石／那須温泉神社／南ヶ丘牧場</div></div>
+      <div class="row"><div class="k">🍽️ 食事</div><div class="v">那須高原バル／NASU SHOZO CAFE</div></div>
+      <div class="row"><div class="k">🚄 2日目</div><div class="v">那須塩原駅で1名下車、電車で川崎へ</div></div>
+      <div class="row"><div class="k">⏰ 到着</div><div class="v">電車組は<strong>川崎駅19:00までに到着</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DAY 1 TIMELINE
+     ============================================================ -->
+<section class="page" id="day1">
+  <span class="page-tab">P. 02</span>
+
+  <div class="hd-group"><span class="section-num">02 · DAY ONE</span>
+  <h2 class="section">1日目のタイムライン<span class="en">THU · 17 SEP · AGEO → NASU</span></h2>
+
+  <h3 class="day"><span class="title">🚗 上尾 → 🍽️ ランチ → 🧸 テディベア → ☕ カフェ → ♨️ 温泉</span> <span class="date">09.17 THU</span></h3></div>
+
+  <div class="timeline">
+    <div class="t-row orange">
+      <div class="t-time">09:30</div>
+      <div class="t-what"><strong>埼玉県上尾市を出発</strong><small>忘れ物・給油・ETCカード最終確認</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">09:30<br>│11:40</div>
+      <div class="t-what">東北道で那須方面へ移動<small>約130分・SA休憩なしで直行</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">11:40<br>│11:50</div>
+      <div class="t-what">那須高原バル 到着・駐車<small>約10分</small></div>
+    </div>
+    <div class="t-row orange">
+      <div class="t-time">11:50<br>│12:50</div>
+      <div class="t-what"><strong>🍽️ 那須高原バルで昼食</strong><small>約60分</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">12:50<br>│13:10</div>
+      <div class="t-what">テディベア・ミュージアムへ移動<small>約20分</small></div>
+    </div>
+    <div class="t-row sky">
+      <div class="t-time">13:10<br>│14:25</div>
+      <div class="t-what"><strong>🧸 那須テディベア・ミュージアム</strong><small>約75分</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">14:25<br>│14:45</div>
+      <div class="t-what">NASU SHOZO CAFE へ移動<small>約20分</small></div>
+    </div>
+    <div class="t-row leaf">
+      <div class="t-time">14:45<br>│15:30</div>
+      <div class="t-what"><strong>☕ NASU SHOZO CAFE</strong><small>約45分</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">15:30<br>│16:00</div>
+      <div class="t-what">かんすい苑 覚楽へ移動<small>約30分</small></div>
+    </div>
+    <div class="t-row cherry">
+      <div class="t-time">16:00</div>
+      <div class="t-what"><strong>♨️ チェックイン</strong><small>荷解き・温泉・夕食・館内でゆっくり</small></div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">TIP</span>
+    道路状況により昼食開始が遅れた場合は、SHOZO CAFEを短縮または軽くテイクアウトに切り替え、
+    <strong>覚楽の夕食時刻を最優先</strong>する。
+  </div>
+</section>
+
+<!-- ============================================================
+     DAY 1 SPOTS
+     ============================================================ -->
+<section class="page">
+  <span class="page-tab sky">P. 03</span>
+
+  <div class="hd-group"><span class="section-num sky">03 · SPOTS</span>
+  <h2 class="section">1日目のスポット<span class="en">EAT · PLAY · REST</span></h2></div>
+
+  <div class="spot-card orange" id="bar">
+    <span class="spot-tag">03 · LUNCH · 11:50–12:50</span>
+    <h4 class="spot"><span class="icon">🍽️</span> 那須高原バル <span class="en">NASU-KOGEN BAR</span></h4>
+    <p class="muted">家族で利用しやすい洋食レストラン。ハンバーグ・肉料理・パスタから選びやすく、駐車場もあります。</p>
+
+    <div class="info-row"><div class="k">📍 所在地</div><div class="v">栃木県那須郡那須町高久乙2741-2</div></div>
+    <div class="info-row"><div class="k">📞 電話</div><div class="v">0287-73-5214</div></div>
+    <div class="info-row"><div class="k">🕚 営業</div><div class="v">平日 11:30–20:00（L.O. 19:00）</div></div>
+    <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://nasukogen-bar.com/" target="_blank" rel="noopener">nasukogen-bar.com</a>／<a href="https://nasukogen-bar.com/seatsreservation/" target="_blank" rel="noopener">席予約</a></div></div>
+
+    <div class="callout">
+      <span class="label">BOOKING</span>
+      日時：9/17（木）11:50／退店目安：12:50<br>
+      当日予約時は電話で「道路状況で多少前後する可能性」を伝えておく。
+    </div>
+  </div>
+
+  <div class="spot-card sky" id="teddy">
+    <span class="spot-tag">04 · MUSEUM · 13:10–14:25</span>
+    <h4 class="spot"><span class="icon">🧸</span> テディベア・ミュージアム <span class="en">TEDDY BEAR MUSEUM</span></h4>
+    <p class="muted">館内見学、写真撮影、ミュージアムショップを含めて約75分を予定。</p>
+
+    <div class="info-row"><div class="k">📍 所在地</div><div class="v">栃木県那須郡那須町高久丙1185-4</div></div>
+    <div class="info-row"><div class="k">🕘 開館</div><div class="v">9:30–17:00（最終入館 16:30）</div></div>
+    <div class="info-row"><div class="k">🎟️ 料金</div><div class="v">大人 ¥1,800／中高生 ¥1,200／小学生 ¥1,000<br>小学生未満・75歳以上 無料</div></div>
+    <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://www.teddynet.co.jp/nasu/info/" target="_blank" rel="noopener">teddynet.co.jp/nasu/info</a></div></div>
+
+    <p class="mt-16"><strong>🐻 滞在の目安</strong></p>
+    <ul class="plain">
+      <li>常設展示・企画展示（約45分）</li>
+      <li>家族写真タイム（約10分）</li>
+      <li>ミュージアムショップ（約15分）</li>
+      <li>14:25までに出発</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     DAY 1 SPOTS 2
+     ============================================================ -->
+<section class="page">
+  <span class="page-tab leaf">P. 04</span>
+
+  <div class="spot-card leaf" id="shozo">
+    <span class="spot-tag">05 · CAFE · 14:45–15:30</span>
+    <h4 class="spot"><span class="icon">☕</span> NASU SHOZO CAFE <span class="en">SHOZO COFFEE</span></h4>
+    <p class="muted">那須を代表する人気カフェ。スコーン、ケーキ、コーヒーがおすすめ。</p>
+
+    <div class="info-row"><div class="k">📍 所在地</div><div class="v">栃木県那須郡那須町高久乙2730-25</div></div>
+    <div class="info-row"><div class="k">📞 電話</div><div class="v">0287-78-3593</div></div>
+    <div class="info-row"><div class="k">🔗 案内</div><div class="v"><a href="https://www.shozo.co.jp/map/nasu.html" target="_blank" rel="noopener">店舗案内</a>／<a href="https://www.shozo.co.jp/news/categories/holiday/" target="_blank" rel="noopener">営業・休業情報</a></div></div>
+
+    <p class="mt-16"><strong>⏱️ 混雑時の対応</strong></p>
+    <ul class="plain">
+      <li>待ち時間 <strong>20分以内</strong> → 予定どおり店内利用</li>
+      <li>待ち時間 <strong>20–30分</strong> → 滞在を短縮</li>
+      <li>待ち時間 <strong>30分以上</strong> → スコーン等をテイクアウト</li>
+      <li>遅くとも <strong>15:30–15:35</strong> にはホテルへ出発</li>
+    </ul>
+
+    <div class="callout warn">
+      <span class="label">RULE</span>
+      SHOZO CAFEは予約不可。<strong>ホテルの夕食時刻を最優先</strong>にする。
+    </div>
+  </div>
+
+  <div class="spot-card cherry" id="hotel">
+    <span class="spot-tag">06 · STAY · 16:00 CHECK-IN</span>
+    <h4 class="spot"><span class="icon">♨️</span> かんすい苑 覚楽 <span class="en">KAKURAKU</span></h4>
+    <p class="muted">1日目の夜のお宿。温泉と夕食でゆっくり過ごします。</p>
+
+    <div class="info-row"><div class="k">📍 所在地</div><div class="v">栃木県那須塩原市黒磯402-5</div></div>
+    <div class="info-row"><div class="k">🕒 IN/OUT</div><div class="v">チェックイン 15:00–18:00／チェックアウト 10:00</div></div>
+    <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://www.kakuraku.com/" target="_blank" rel="noopener">kakuraku.com</a>／<a href="https://www.kakuraku.com/facilities.html" target="_blank" rel="noopener">館内・施設</a></div></div>
+
+    <div class="cols mt-16">
+      <div>
+        <p><strong>🌙 到着後の流れ</strong></p>
+        <ul class="plain">
+          <li>チェックイン</li>
+          <li>客室で休憩</li>
+          <li>温泉</li>
+          <li>夕食</li>
+          <li>翌日の荷物整理</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>📞 事前に電話で確認</strong></p>
+        <div class="checklist" style="grid-template-columns:1fr">
+          <label><input type="checkbox"><span>夕食開始時刻</span></label>
+          <label><input type="checkbox"><span>朝食開始時刻</span></label>
+          <label><input type="checkbox"><span>子ども用料理・アレルギー</span></label>
+          <label><input type="checkbox"><span>チェックアウト時の精算方法</span></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DAY 2 TIMELINE
+     ============================================================ -->
+<section class="page" id="day2">
+  <span class="page-tab">P. 05</span>
+
+  <div class="hd-group"><span class="section-num">07 · DAY TWO</span>
+  <h2 class="section">2日目のタイムライン<span class="en">FRI · 18 SEP · NASU → KAWASAKI</span></h2>
+
+  <h3 class="day"><span class="title">♨️ 覚楽 → 🦊 殺生石 → 🐄 南ヶ丘牧場 → 🚄 那須塩原駅</span> <span class="date">09.18 FRI</span></h3></div>
+
+  <div class="timeline">
+    <div class="t-row">
+      <div class="t-time">08:00</div>
+      <div class="t-what">朝食<small>宿の指定時刻に合わせる</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">08:45<br>│09:50</div>
+      <div class="t-what">温泉・荷造り・出発準備<small>約65分</small></div>
+    </div>
+    <div class="t-row orange">
+      <div class="t-time">10:00</div>
+      <div class="t-what"><strong>チェックアウト・出発</strong></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">10:00<br>│10:40</div>
+      <div class="t-what">殺生石へ移動<small>約40分</small></div>
+    </div>
+    <div class="t-row purple">
+      <div class="t-time">10:40<br>│11:25</div>
+      <div class="t-what"><strong>🦊 殺生石・那須温泉神社</strong><small>約45分</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">11:25<br>│11:40</div>
+      <div class="t-what">南ヶ丘牧場へ移動<small>約15分</small></div>
+    </div>
+    <div class="t-row leaf">
+      <div class="t-time">11:40<br>│12:35</div>
+      <div class="t-what"><strong>🐄 南ヶ丘牧場・昼食</strong><small>約55分</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">12:35<br>│14:20</div>
+      <div class="t-what">動物ふれあい・散策・体験<small>約1時間45分</small></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">14:20<br>│14:45</div>
+      <div class="t-what">🍦 ソフトクリーム・買い物<small>約25分</small></div>
+    </div>
+    <div class="t-row cherry">
+      <div class="t-time">14:50</div>
+      <div class="t-what"><strong>🚗 南ヶ丘牧場を出発（時刻厳守）</strong></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">14:50<br>│15:25</div>
+      <div class="t-what">那須塩原駅へ移動<small>約35分</small></div>
+    </div>
+    <div class="t-row sky">
+      <div class="t-time">15:25<br>│15:30</div>
+      <div class="t-what"><strong>那須塩原駅 西口到着・1名下車</strong></div>
+    </div>
+    <div class="t-row cherry">
+      <div class="t-time">16:03</div>
+      <div class="t-what"><strong>🚄 電車組：なすの278号 出発</strong></div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">17:16</div>
+      <div class="t-what">東京駅 到着</div>
+    </div>
+    <div class="t-row">
+      <div class="t-time">17:30<br>ごろ</div>
+      <div class="t-what">東海道線で川崎方面へ出発<small>当日案内を確認</small></div>
+    </div>
+    <div class="t-row cherry">
+      <div class="t-time">17:50<br>ごろ</div>
+      <div class="t-what"><strong>🏠 川崎駅到着予定</strong><small>19:00まで約1時間の余裕あり</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DAY 2 SPOTS
+     ============================================================ -->
+<section class="page">
+  <span class="page-tab purple">P. 06</span>
+
+  <div class="hd-group"><span class="section-num purple">08 · SIGHTSEEING</span>
+  <h2 class="section">2日目のスポット<span class="en">SESSHOSEKI · MINAMIGAOKA FARM</span></h2></div>
+
+  <div class="spot-card purple" id="sessho">
+    <span class="spot-tag">08 · SIGHTS · 10:40–11:25</span>
+    <h4 class="spot"><span class="icon">🦊</span> 殺生石・那須温泉神社 <span class="en">SESSHOSEKI · YUZEN</span></h4>
+    <p class="muted">殺生石と那須温泉神社は隣接。あわせて約45分で回ります。</p>
+
+    <div class="info-row"><div class="k">🔗 案内</div><div class="v"><a href="https://www.town.nasu.lg.jp/0224/info-0000000398-1.html" target="_blank" rel="noopener">殺生石（那須町）</a>／<a href="https://nasu-yuzen.jp/pages/5/" target="_blank" rel="noopener">那須温泉神社</a></div></div>
+
+    <p class="mt-16"><strong>🚶 散策の順路</strong></p>
+    <div class="route">
+      <div class="stop"><div class="num">01</div><div class="name">殺生石園地 <small>駐車場から入口へ</small></div></div>
+      <div class="arrow">↓</div>
+      <div class="stop"><div class="num">02</div><div class="name">千体地蔵</div></div>
+      <div class="arrow">↓</div>
+      <div class="stop"><div class="num">03</div><div class="name">殺生石</div></div>
+      <div class="arrow">↓</div>
+      <div class="stop"><div class="num">04</div><div class="name">那須温泉神社</div></div>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">CARE</span>
+      硫黄臭のある場所なので長時間の滞在は避け、<strong>現地の案内表示に従う</strong>。
+      雨天時は木道・石段が滑りやすいため注意。<br>
+      駐車場混雑を含め45分以内を目安に、<strong>11:25までに出発</strong>する。
+    </div>
+  </div>
+
+  <div class="spot-card leaf" id="farm">
+    <span class="spot-tag">09 · FARM · 11:40–14:50</span>
+    <h4 class="spot"><span class="icon">🐄</span> 南ヶ丘牧場 <span class="en">MINAMIGAOKA FARM</span></h4>
+    <p class="muted">入場料・駐車料金が無料の観光牧場。動物ふれあい・体験・ソフトクリームまで満喫。</p>
+
+    <div class="info-row"><div class="k">🕒 営業</div><div class="v">8:00–17:30 目安</div></div>
+    <div class="info-row"><div class="k">🎟️ 料金</div><div class="v">入場・駐車ともに無料（体験は別途）</div></div>
+    <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://www.minamigaoka.co.jp/" target="_blank" rel="noopener">minamigaoka.co.jp</a>／<a href="https://www.minamigaoka.co.jp/map/" target="_blank" rel="noopener">マップ</a>／<a href="https://www.minamigaoka.co.jp/play/" target="_blank" rel="noopener">遊び</a>／<a href="https://www.minamigaoka.co.jp/trial/" target="_blank" rel="noopener">体験</a>／<a href="https://www.minamigaoka.co.jp/food/" target="_blank" rel="noopener">食事</a>／<a href="https://www.minamigaoka.co.jp/shopping/" target="_blank" rel="noopener">売店</a></div></div>
+
+    <p class="mt-16"><strong>🐑 おすすめの回り方</strong></p>
+    <ol class="rules">
+      <li>到着後、体験プログラムの受付時刻を確認</li>
+      <li>11:40–12:35 に昼食</li>
+      <li>動物ふれあい・乗馬など</li>
+      <li>園内散策</li>
+      <li>ガーンジィゴールデンミルクのソフトクリーム 🍦</li>
+      <li>お土産購入</li>
+      <li>14:50までに出発</li>
+    </ol>
+
+    <div class="callout warn">
+      <span class="label">TIME</span>
+      <strong>14:50出発は厳守。</strong>混雑時は体験を一つ減らし、駅到着を優先する。
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRAIN
+     ============================================================ -->
+<section class="page" id="train">
+  <span class="page-tab sky">P. 07</span>
+
+  <div class="hd-group"><span class="section-num sky">10 · SHINKANSEN</span>
+  <h2 class="section">電車組・川崎への移動<span class="en">NASU-SHIOBARA → TOKYO → KAWASAKI</span></h2></div>
+
+  <div class="train">
+    <h4><span class="ic">🚄 278</span> 推奨列車・なすの278号</h4>
+    <div class="leg">
+      <div class="st">那須塩原<small>NASU-SHIOBARA</small></div>
+      <div class="line-info">東北新幹線 なすの278号（約1h13）</div>
+      <div class="time right">16:03 発</div>
+    </div>
+    <div class="leg">
+      <div class="st">東京<small>TOKYO</small></div>
+      <div class="line-info">JR東海道線に乗り換え</div>
+      <div class="time right">17:16 着</div>
+    </div>
+    <div class="leg">
+      <div class="st">東京<small>TOKYO</small></div>
+      <div class="line-info">JR東海道線</div>
+      <div class="time right">17:30ごろ 発</div>
+    </div>
+    <div class="leg">
+      <div class="st">川崎<small>KAWASAKI</small></div>
+      <div class="line-info">🏠 19:00まで約1時間の余裕あり</div>
+      <div class="time right">17:50ごろ 着</div>
+    </div>
+    <p style="margin-top:16px; font-size:12px; color:#d0eef7; line-height:1.7">
+      🔗 時刻表：<a href="https://timetables.jreast.co.jp/2609/train/020/022211.html" target="_blank" rel="noopener">なすの278号</a>／
+      予約：<a href="https://www.eki-net.com/Personal/Top/Index" target="_blank" rel="noopener">えきねっと</a>
+    </p>
+  </div>
+
+  <div class="cols">
+    <div class="spot-card orange" style="margin:0">
+      <span class="spot-tag">TICKET</span>
+      <h4 class="spot"><span class="icon">🎫</span> きっぷ</h4>
+      <ul class="plain">
+        <li>乗車券：那須塩原駅 → 川崎駅</li>
+        <li>新幹線特急券：那須塩原駅 → 東京駅</li>
+        <li>指定席は事前予約推奨</li>
+      </ul>
+    </div>
+    <div class="spot-card cherry" style="margin:0">
+      <span class="spot-tag">FLOW</span>
+      <h4 class="spot"><span class="icon">🚶</span> 駅到着後</h4>
+      <ol class="rules" style="margin:0">
+        <li>15:25–15:30 に西口で下車</li>
+        <li>車から荷物を降ろす</li>
+        <li>トイレ・飲み物購入</li>
+        <li>改札へ移動</li>
+        <li>15:50までにホームへ</li>
+        <li>16:03発の列車に乗車</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout info mt-16">
+    <span class="label">INFO</span>
+    那須塩原駅：<a href="https://www.jreast.co.jp/estation/station/info.aspx?StationCd=1118" target="_blank" rel="noopener">駅情報</a>／
+    <a href="https://www.jreast.co.jp/estation/stations/1118.html" target="_blank" rel="noopener">構内図</a>／
+    <a href="https://timetables.jreast.co.jp/timetable/list1118.html" target="_blank" rel="noopener">時刻表</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     CAR
+     ============================================================ -->
+<section class="page" id="car">
+  <span class="page-tab leaf">P. 08</span>
+
+  <div class="hd-group"><span class="section-num leaf">11 · CAR TEAM</span>
+  <h2 class="section">車組・駅送迎後の予定<span class="en">MEIJI-NO-MORI · KUROISO</span></h2></div>
+
+  <div class="spot-card leaf">
+    <span class="spot-tag">FIRST CHOICE</span>
+    <h4 class="spot"><span class="icon">🛍️</span> 明治の森・黒磯 ＋ 旧青木家那須別邸</h4>
+    <p class="muted">駅から近く、上尾方面へ戻る前に立ち寄りやすい組み合わせ。</p>
+
+    <div class="timeline mt-16">
+      <div class="t-row">
+        <div class="t-time">15:30<br>ごろ</div>
+        <div class="t-what">那須塩原駅を出発</div>
+      </div>
+      <div class="t-row">
+        <div class="t-time">15:50<br>│16:00</div>
+        <div class="t-what">道の駅 明治の森・黒磯 到着</div>
+      </div>
+      <div class="t-row orange">
+        <div class="t-time">16:00<br>│16:20</div>
+        <div class="t-what"><strong>🛍️ 道の駅で買い物・休憩</strong><small>約20分</small></div>
+      </div>
+      <div class="t-row sky">
+        <div class="t-time">16:20<br>│16:50</div>
+        <div class="t-what"><strong>🏛️ 旧青木家那須別邸 見学</strong><small>約30分</small></div>
+      </div>
+      <div class="t-row">
+        <div class="t-time">17:00</div>
+        <div class="t-what">上尾方面へ出発</div>
+      </div>
+      <div class="t-row cherry">
+        <div class="t-time">19:30<br>│20:00</div>
+        <div class="t-what"><strong>🏠 上尾到着目安</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="spot-card orange" style="margin:0">
+      <span class="spot-tag">SHOP</span>
+      <h4 class="spot"><span class="icon">🥬</span> 明治の森・黒磯</h4>
+      <div class="info-row"><div class="k">📍 所在地</div><div class="v">栃木県那須塩原市青木27</div></div>
+      <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://meijinomori.jp/" target="_blank" rel="noopener">meijinomori.jp</a></div></div>
+      <p class="muted mt-16 mb-0">農産物・パン・軽食・お土産などが揃う。</p>
+    </div>
+
+    <div class="spot-card sky" style="margin:0">
+      <span class="spot-tag">HISTORIC</span>
+      <h4 class="spot"><span class="icon">🏛️</span> 旧青木家別邸</h4>
+      <div class="info-row"><div class="k">🕘 開館</div><div class="v">9:00–17:30（4–9月）</div></div>
+      <div class="info-row"><div class="k">🎟️ 料金</div><div class="v">大人 ¥200／小中学生 ¥100</div></div>
+      <div class="info-row"><div class="k">🔗 案内</div><div class="v"><a href="https://www.city.nasushiobara.tochigi.jp/soshikikarasagasu/shogaigakushuka/bunkazai/2/6/2636.html" target="_blank" rel="noopener">那須塩原市</a></div></div>
+    </div>
+  </div>
+
+  <div class="callout warn mt-16">
+    <span class="label">RULE</span>
+    <strong>時間が遅れた場合の判断</strong><br>
+    ・16:10 以前に到着 → 道の駅＋旧青木家別邸<br>
+    ・16:10–16:30 到着 → 旧青木家別邸を先に<br>
+    ・16:30 以降 → 道の駅で買い物のみ<br>
+    ・雨が強い場合 → 那須ガーデンアウトレットへ変更可
+  </div>
+</section>
+
+<!-- ============================================================
+     RAIN
+     ============================================================ -->
+<section class="page" id="rain">
+  <span class="page-tab sky">P. 09</span>
+
+  <div class="hd-group"><span class="section-num sky">12 · RAIN PLAN</span>
+  <h2 class="section">雨天時の代替プラン<span class="en">IN CASE OF RAIN</span></h2></div>
+
+  <div class="cols mt-16">
+    <div class="spot-card orange" style="margin:0">
+      <span class="spot-tag">☂️ 1日目</span>
+      <h4 class="spot" style="font-size:18px"><span class="icon">☂️</span> 予定どおりOK</h4>
+      <p>屋内施設が中心のため、<strong>基本的に予定どおり実施</strong>。</p>
+      <ul class="plain">
+        <li>那須高原バル：屋内</li>
+        <li>テディベア・ミュージアム：屋内</li>
+        <li>SHOZO CAFE：屋内</li>
+        <li>覚楽：温泉・館内利用</li>
+      </ul>
+      <p class="muted">大雨の場合はSHOZO CAFEを短縮し、早めに宿へ。</p>
+    </div>
+
+    <div class="spot-card cherry" style="margin:0">
+      <span class="spot-tag">🌧️ 2日目</span>
+      <h4 class="spot" style="font-size:18px"><span class="icon">🌧️</span> 小雨 → 短縮運用</h4>
+      <ul class="plain">
+        <li>殺生石を <strong>20–30分</strong> に短縮</li>
+        <li>南ヶ丘牧場は屋根のある場所を中心に</li>
+        <li>滑りにくい靴と雨具を用意</li>
+      </ul>
+
+      <h4 class="spot mt-16" style="font-size:18px"><span class="icon">⛈️</span> 大雨 → 屋内へ振替</h4>
+      <ul class="plain">
+        <li>殺生石を省略または短時間見学</li>
+        <li>南ヶ丘牧場の屋外滞在を短縮</li>
+        <li>屋内施設へ振替（下記候補）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cols mt-16">
+    <div class="spot-card purple" style="margin:0">
+      <span class="spot-tag">RAIN · INDOOR</span>
+      <h4 class="spot"><span class="icon">🌈</span> ステンドグラス美術館</h4>
+      <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://sgm-nasu.com/" target="_blank" rel="noopener">sgm-nasu.com</a></div></div>
+      <p class="muted mb-0">営業状況・休館日を当日確認。</p>
+    </div>
+    <div class="spot-card leaf" style="margin:0">
+      <span class="spot-tag">RAIN · CAR TEAM</span>
+      <h4 class="spot"><span class="icon">🛍️</span> ガーデンアウトレット</h4>
+      <div class="info-row"><div class="k">🔗 公式</div><div class="v"><a href="https://www.nasu-gardenoutlet.com/" target="_blank" rel="noopener">nasu-gardenoutlet.com</a></div></div>
+      <p class="muted mb-0">駅送迎後の車組の立ち寄り先にも。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABSOLUTE + ROUTE
+     ============================================================ -->
+<section class="page" id="absolute">
+  <span class="page-tab cherry">P. 10</span>
+
+  <div class="hd-group"><span class="section-num cherry">13 · NON-NEGOTIABLE</span>
+  <h2 class="section">絶対に守りたい時刻<span class="en">HARD TIMES</span></h2></div>
+
+  <div class="abs-times">
+    <div class="item"><div class="t">09.17 · 09:30</div><div class="w">上尾出発</div></div>
+    <div class="item"><div class="t">09.17 · 11:50</div><div class="w">那須高原バルで昼食開始</div></div>
+    <div class="item"><div class="t">09.17 · 14:25</div><div class="w">テディベア・ミュージアム出発</div></div>
+    <div class="item"><div class="t">09.17 · 15:30</div><div class="w">SHOZO CAFE 出発判断</div></div>
+    <div class="item"><div class="t">09.17 · 16:00</div><div class="w">覚楽 チェックイン</div></div>
+    <div class="item"><div class="t">09.18 · 10:00</div><div class="w">覚楽 チェックアウト</div></div>
+    <div class="item"><div class="t">09.18 · 11:25</div><div class="w">殺生石 出発</div></div>
+    <div class="item"><div class="t">09.18 · 14:50</div><div class="w">南ヶ丘牧場 出発（時刻厳守）</div></div>
+    <div class="item"><div class="t">09.18 · 15:30</div><div class="w">那須塩原駅 到着</div></div>
+    <div class="item"><div class="t">09.18 · 16:03</div><div class="w">なすの278号 出発</div></div>
+    <div class="item"><div class="t">09.18 · 19:00</div><div class="w">🏠 川崎駅到着（デッドライン）</div></div>
+  </div>
+
+  <div class="mt-24" id="route">
+    <div class="hd-group"><span class="section-num">14 · FINAL ROUTE</span>
+    <h2 class="section">最終ルートまとめ<span class="en">ROUTE SUMMARY</span></h2></div>
+
+    <div class="cols mt-16">
+      <div>
+        <p><strong>🚗 1日目・車</strong></p>
+        <div class="route">
+          <div class="stop"><div class="num">01</div><div class="name">上尾</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">02</div><div class="name">那須高原バル</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">03</div><div class="name">テディベア・ミュージアム</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">04</div><div class="name">NASU SHOZO CAFE</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">05</div><div class="name">かんすい苑 覚楽</div></div>
+        </div>
+      </div>
+      <div>
+        <p><strong>🚗 2日目・車</strong></p>
+        <div class="route">
+          <div class="stop"><div class="num">01</div><div class="name">かんすい苑 覚楽</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">02</div><div class="name">殺生石・那須温泉神社</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">03</div><div class="name">南ヶ丘牧場</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">04</div><div class="name">那須塩原駅</div></div>
+        </div>
+
+        <p class="mt-16"><strong>🚄 電車組</strong></p>
+        <div class="route">
+          <div class="stop"><div class="num">01</div><div class="name">那須塩原 <small>東北新幹線</small></div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">02</div><div class="name">東京 <small>JR東海道線</small></div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">03</div><div class="name">川崎</div></div>
+        </div>
+
+        <p class="mt-16"><strong>🚙 車組・帰路</strong></p>
+        <div class="route">
+          <div class="stop"><div class="num">01</div><div class="name">那須塩原駅</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">02</div><div class="name">道の駅 明治の森・黒磯</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">03</div><div class="name">旧青木家那須別邸</div></div>
+          <div class="arrow">↓</div>
+          <div class="stop"><div class="num">04</div><div class="name">上尾</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHECKLIST
+     ============================================================ -->
+<section class="page" id="checklist">
+  <span class="page-tab leaf">P. 11</span>
+
+  <div class="hd-group"><span class="section-num leaf">15 · PRE-TRIP</span>
+  <h2 class="section">事前チェックリスト<span class="en">BEFORE YOU LEAVE</span></h2></div>
+  <p class="muted">✓ を付けた項目はブラウザに保存されます 📝</p>
+
+  <h4 class="spot mt-24"><span class="icon">📞</span> 予約・連絡</h4>
+  <div class="checklist">
+    <label><input type="checkbox"><span>那須高原バルを 9/17 11:35 で予約</span></label>
+    <label><input type="checkbox"><span>覚楽の夕食開始時刻を確認</span></label>
+    <label><input type="checkbox"><span>覚楽の朝食開始時刻を確認</span></label>
+    <label><input type="checkbox"><span>なすの278号の指定席を予約</span></label>
+    <label><input type="checkbox"><span>那須塩原→川崎の乗車券を準備</span></label>
+    <label><input type="checkbox"><span>SHOZO CAFE の当日営業情報を確認</span></label>
+    <label><input type="checkbox"><span>南ヶ丘牧場の体験受付時刻を確認</span></label>
+  </div>
+
+  <h4 class="spot mt-24"><span class="icon">🌤️</span> 前日・当日確認</h4>
+  <div class="checklist">
+    <label><input type="checkbox"><span>那須周辺の天気予報</span></label>
+    <label><input type="checkbox"><span>東北道の渋滞・事故・通行止め</span></label>
+    <label><input type="checkbox"><span>殺生石周辺の立入規制</span></label>
+    <label><input type="checkbox"><span>JR東日本の運行情報</span></label>
+    <label><input type="checkbox"><span>ガソリン残量</span></label>
+    <label><input type="checkbox"><span>ETCカード</span></label>
+    <label><input type="checkbox"><span>モバイルバッテリー</span></label>
+  </div>
+
+  <h4 class="spot mt-24"><span class="icon">🎒</span> 持ち物</h4>
+  <div class="checklist">
+    <label><input type="checkbox"><span>雨具・折り畳み傘</span></label>
+    <label><input type="checkbox"><span>滑りにくい靴</span></label>
+    <label><input type="checkbox"><span>羽織れる上着</span></label>
+    <label><input type="checkbox"><span>健康保険証・常備薬</span></label>
+    <label><input type="checkbox"><span>新幹線のきっぷ・予約情報</span></label>
+    <label><input type="checkbox"><span>子どもの着替え</span></label>
+    <label><input type="checkbox"><span>ウェットティッシュ</span></label>
+    <label><input type="checkbox"><span>飲み物</span></label>
+    <label><input type="checkbox"><span>エコバッグ・お土産用バッグ</span></label>
+  </div>
+</section>
+
+<!-- ============================================================
+     RULES + END
+     ============================================================ -->
+<section class="page" id="rules">
+  <span class="page-tab purple">P. 12</span>
+
+  <div class="hd-group"><span class="section-num purple">16 · DAY-OF RULES</span>
+  <h2 class="section">当日の調整ルール<span class="en">EIGHT SIMPLE RULES</span></h2></div>
+
+  <ol class="rules mt-16">
+    <li>初日の到着が遅れた場合は、テディベアとカフェの滞在を10分ずつ短縮する</li>
+    <li>テディベア・ミュージアムは最低70分確保する</li>
+    <li>SHOZO CAFEが混雑していたらテイクアウトに変更する</li>
+    <li>2日目は 11:25 までに殺生石を出発する</li>
+    <li>南ヶ丘牧場は必ず 14:50 までに出発する</li>
+    <li>電車組は 15:50 までに新幹線ホームへ移動する</li>
+    <li>車組の追加観光は、旧青木家別邸の閉館時刻を優先する</li>
+    <li>天候・交通状況が悪い場合は、観光より安全と列車時刻を優先する</li>
+  </ol>
+
+  <div class="divider">✿ ✿ ✿</div>
+
+  <div class="callout tip">
+    <span class="label">MOTTO</span>
+    観光地を増やしすぎず、家族での食事、テディベア、カフェ、温泉、牧場をゆっくり楽しむ。<br>
+    2日目は <strong>16:03発の「なすの278号」</strong> を利用し、
+    南ヶ丘牧場の出発時刻 <strong>14:50</strong> を守れば、
+    駅には約30分前に到着し、<strong>川崎19:00到着</strong> は確実。
+  </div>
+
+  <div class="cover-footer" style="margin-top:32px">
+    <div class="motto-box">
+      <em>ISSUED</em>2026.09 · Family Edition<br>
+      <em>SAFETY</em>いってらっしゃい、いってきます 🍀
+    </div>
+    <div class="stamp" style="transform:rotate(6deg); border-color:var(--leaf); color:var(--leaf-2); box-shadow: inset 0 0 0 4px #fff, 0 4px 0 rgba(79,154,58,.2)">FAMILY<br>TRIP<span>NASU 2026</span></div>
+  </div>
+
+  <div class="colophon">
+    NASU FAMILY TRIP · SEP 17–18, 2026 · HANDMADE ITINERARY
+  </div>
+</section>
+
+</div>
+
+<script>
+  // チェックリスト状態を保存
+  document.querySelectorAll('.checklist input[type=checkbox]').forEach((cb) => {
+    const key = 'nasu-check-' + (cb.parentElement.textContent.trim().slice(0,40));
+    try { if (localStorage.getItem(key) === '1') cb.checked = true; } catch (e) {}
+    cb.addEventListener('change', () => {
+      try {
+        if (cb.checked) localStorage.setItem(key, '1');
+        else localStorage.removeItem(key);
+      } catch (e) {}
+    });
+  });
+
+  // 目次のスムーススクロール
+  document.querySelectorAll('.toc a').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      const t = document.querySelector(id);
+      if (t) {
+        e.preventDefault();
+        window.scrollTo({top: t.offsetTop - 20, behavior:'smooth'});
+      }
+    });
+  });
+</script>
+</body>
+</html>
