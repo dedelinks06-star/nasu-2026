@@ -1925,13 +1925,17 @@
   });
 
   // 目次のスムーススクロール
+  // offsetTop は position:relative の .page からの相対値になってしまい、
+  // 章の途中にあるカード（#orso など）へのリンクが大きくずれるので、
+  // ページ全体を基準にした座標を使う。
   document.querySelectorAll('.toc a').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
       const t = document.querySelector(id);
       if (t) {
         e.preventDefault();
-        window.scrollTo({top: t.offsetTop - 20, behavior:'smooth'});
+        const y = t.getBoundingClientRect().top + window.pageYOffset - 20;
+        window.scrollTo({top: y, behavior:'smooth'});
       }
     });
   });
